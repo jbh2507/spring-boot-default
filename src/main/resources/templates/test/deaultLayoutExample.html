@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+  xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+  layout:decorate="~{layout/defaultLayout}">
+<head>
+	<meta charset="utf-8">
+    <title>Default layout</title>
+</head>
+<body>
+
+	<th:block layout:fragment="content">
+		<div class="container-fluid">
+
+          <!-- Page Heading -->
+		<div>
+			<h1 class="h3 mb-2 text-gray-800">Title</h1>
+			<p class="mb-4 text-gray-600">설명</p>
+		</div>
+
+        	<div class="card shadow mb-4">
+	          <!-- Card Header -->
+	        	<div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+		        	<h6 class="m-0 font-weight-bold text-primary">Card title</h6>
+		    	</div>
+		    	<!-- Card Body -->
+				<div class="card-body pr-5 pl-5">
+					
+					
+				</div>
+        	</div>
+        </div>
+
+	
+
+	</th:block>
+	 
+	<th:block layout:fragment="popUpHeader">
+	
+	</th:block>
+	 
+	<th:block layout:fragment="popUpContent">
+	 
+	</th:block>
+	
+	<th:block layout:fragment="pageCustomScript">
+	
+	</th:block>    
+	
+	
+	<th:block layout:fragment="pageCustomCss">
+
+	</th:block> 
+	
+</body>
+</html>

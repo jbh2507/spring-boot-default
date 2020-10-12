@@ -1,0 +1,118 @@
+<meta charset="UTF-8">
+<html xmlns:th="http://www.thymeleaf.org">
+ <!-- Sidebar -->
+    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+      <!-- Sidebar - Brand -->
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="#">
+        <div class="sidebar-brand-icon">
+          <i class="fas fa-wind"></i>
+        </div>
+        <div class="sidebar-brand-text mx-3">연직바람</div>
+      </a>
+
+      <!-- Divider -->
+      <hr class="sidebar-divider">
+
+      <!-- Heading -->
+      <div class="sidebar-heading">
+        	Observation
+      </div>
+
+      <li class="nav-item">
+        <a class="nav-link" href="/">
+          <i class="fas fa-play"></i>
+          <span>Control</span></a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+          <i class="far fa-chart-bar"></i>
+          <span>Expression</span>
+        </a>
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <a class="collapse-item" th:href="@{~/expression/main}">Main</a>
+            <a class="collapse-item" th:href="@{~/expression/moment}">Moment</a>
+            <a class="collapse-item" th:href="@{~/expression/spectrum}">Spectrum</a>
+          </div>
+        </div>
+      </li>
+
+      <!-- Divider -->
+      <hr class="sidebar-divider">
+
+      <!-- Heading -->
+      <div class="sidebar-heading">
+        	Station operate / control
+      </div>
+
+      <!-- Nav Item - Dashboard -->
+      <li class="nav-item">
+        <a class="nav-link" href="/dashboard">
+          <i class="fas fa-fw fa-tachometer-alt"></i>
+          <span>Dashboard</span></a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#scheduleManagementPages" aria-expanded="true" aria-controls="collapsePages">
+          <i class="fas fa-calendar-alt"></i>
+          <span>Schedule Management</span>
+        </a>
+        <div id="scheduleManagementPages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <a class="collapse-item" th:href="@{~/scheduleManagement/scheduleTable}">Schedule</a>
+            <a class="collapse-item" th:href="@{~/scheduleManagement/modeTable}">Mode</a>
+          </div>
+        </div>
+      </li>
+
+      <li sec:authorize="hasRole('ROLE_ADMIN')" class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#HardwareManagementPages" aria-expanded="true" aria-controls="collapsePages">
+          <i class="fas fa-satellite-dish"></i>
+          <span>Hardware Management</span>
+        </a>
+        <div id="HardwareManagementPages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <a class="collapse-item" th:href="@{~/hardwareManagement/transceiverController}">Transceiver Controller</a>
+            <a class="collapse-item" th:href="@{~/hardwareManagement/digitalTransceiver}">Digital Transceiver</a>
+            <a class="collapse-item" th:href="@{~/hardwareManagement/powerControlModule}">Power Control Module</a>
+<!--            <a class="collapse-item" th:href="@{~/hardwareManagement/rfx}">Radio Frequency</a>-->
+<!--            <a class="collapse-item" th:href="@{~/hardwareManagement/rfxEach}">Radio Frequency Each</a>-->
+<!--            <a class="collapse-item" th:href="@{~/hardwareManagement/trx}">Transceiver</a>-->
+<!--            <a class="collapse-item" th:href="@{~/hardwareManagement/spx}">Signal Processor</a>-->
+<!--            <a class="collapse-item" th:href="@{~/hardwareManagement/psu}">Power Supply Unit</a>-->
+          </div>
+        </div>
+      </li>
+
+      <li sec:authorize="hasRole('ROLE_ADMIN')" class="nav-item">
+        <a class="nav-link" th:href="@{~/option}">
+          <i class="fas fa-cog"></i>
+          <span>Option</span></a>
+      </li>
+
+	  <!-- Divider -->
+      <hr sec:authorize="hasRole('ROLE_ADMIN')" class="sidebar-divider">
+      
+       <!-- Heading -->
+      <div sec:authorize="hasRole('ROLE_ADMIN')" class="sidebar-heading">
+        	Management
+      </div>
+      
+      <li sec:authorize="hasRole('ROLE_ADMIN')" class="nav-item">
+        <a class="nav-link" th:href="@{~/userManagement/table}">
+          <i class="fas fa-fw fa-user-cog"></i>
+          <span>User Management</span></a>
+      </li>
+      
+      <!-- Divider -->
+      <hr class="sidebar-divider d-none d-md-block">
+      
+      <!-- Sidebar Toggler (Sidebar) -->
+      <div class="text-center d-none d-md-inline">
+        <button class="rounded-circle border-0" id="sidebarToggle"></button>
+      </div>
+
+    </ul>
+    <!-- End of Sidebar -->

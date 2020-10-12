@@ -1,0 +1,81 @@
+#server:
+#  compression:
+#    enabled: true
+#  error:
+#    include-exception: true
+#    include-stacktrace: always
+#    whitelabel:
+#      enabled: true
+#  tomcat:
+#    accesslog:
+#      enabled: true
+#      directory: logs/
+#    basedir: /springbootdefault/logs/tomcat
+#  servlet:
+#    context-path: /
+#  port: 8000
+#spring:
+#  datasource:
+#    url: jdbc:mariadb://203.236.196.189:3306/springbootdefaultDB
+#    username: selabdev
+#    password: qhdkscjfwj!@
+#    driver-class-name: org.mariadb.jdbc.Driver
+#
+#  jpa:
+#    hibernate:
+#      jdbc:
+#        time_zone: UTC
+#      ddl-auto: none
+#      naming:
+#        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+#  thymeleaf:
+#    cache: false
+#logging:
+#  level:
+#    org.hibernate.SQL: debug
+#    com.selab.windprofiler.*: debug
+#    org.apache.tomcat: info
+#  file:
+#    name: /windprofiler/logs/dev_server.log
+#
+
+server:
+  compression:
+    enabled: true
+  error:
+    include-exception: true
+    include-stacktrace: always
+    whitelabel:
+      enabled: true
+  tomcat:
+    accesslog:
+      enabled: true
+      directory: logs/
+    basedir: /windprofiler/logs/tomcat
+  servlet:
+    context-path: /
+  port: 8000
+spring:
+  datasource:
+    url: jdbc:mariadb://docker_mariadb:3306/WindProfilerDB?serverTimezone=UTC&useLegacyDatetimeCode=false
+    username: root
+    password: radar123
+    driver-class-name: org.mariadb.jdbc.Driver
+
+  jpa:
+    hibernate:
+      jdbc:
+        time_zone: UTC
+      ddl-auto: none
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+  thymeleaf:
+    cache: false
+logging:
+  level:
+    org.hibernate.SQL: debug
+    com.selab.windprofiler.*: debug
+    org.apache.tomcat: info
+  file:
+    name: /windprofiler/logs/dev_server.log
+

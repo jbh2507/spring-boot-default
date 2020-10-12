@@ -1,0 +1,28 @@
+server:
+  compression:
+    enabled: true
+  tomcat:
+    accesslog:
+      enable: true
+  servlet:
+    context-path: /
+  port: 8000
+spring:
+  datasource:
+    url: jdbc:mariadb://203.236.196.189:3306/WindProfilerDB
+    username: selabdev
+    password: qhdkscjfwj!@
+    driver-class-name: org.mariadb.jdbc.Driver
+
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+  thymeleaf:
+    cache: false
+logging:
+  level:
+    com.selab.windprofiler.*: debug
+
